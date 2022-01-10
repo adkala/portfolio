@@ -64,6 +64,11 @@ const Aside: React.FC<IAside> = ({mini=false}) => {
     if (newWindow) newWindow.opener = null;
   };
 
+  const changePage = (key: string) => {
+    document.body.style.overflow = "visible"; // temp, add change on component state change
+    history.push(key);
+  };
+
   return (
     <div className={classes.column}>
       <div>
@@ -71,7 +76,7 @@ const Aside: React.FC<IAside> = ({mini=false}) => {
           <p>Addison Kalanther</p>
           <p>
             <span
-              onClick={() => history.push(ART_KEY)}
+              onClick={() => changePage(ART_KEY)}
               className={`${classes.onClick} ${
                 path === ART_KEY ? classes.bold : ""
               }`}
@@ -80,7 +85,7 @@ const Aside: React.FC<IAside> = ({mini=false}) => {
             </span>{" "}
             |{" "}
             <span
-              onClick={() => history.push(TECH_KEY)}
+              onClick={() => changePage(TECH_KEY)}
               className={`${classes.onClick} ${
                 path === TECH_KEY ? classes.bold : ""
               }`}
