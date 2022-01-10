@@ -1,6 +1,7 @@
 import { makeStyles } from "@mui/styles";
 import Aside from "../components/Aside";
-import Content from "../components/Art/ArtContent";
+import Content from "../components/art/ArtContent";
+import Footer from "../components/Footer";
 
 const useStyles = makeStyles(() => ({
   parent: {
@@ -24,6 +25,7 @@ const Art: React.FC = () => {
         <Content />
         <Aside />
       </div>
+      <Footer />
     </div>
   );
 };

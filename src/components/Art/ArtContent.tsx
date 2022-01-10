@@ -1,4 +1,5 @@
 import { makeStyles } from "@mui/styles";
+import ArtEntries from "./ArtEntries";
 
 const useStyles = makeStyles(() => ({
   content: {
@@ -22,31 +23,24 @@ const ArtContent: React.FC = () => {
 
   return (
     <div className={classes.content}>
-      <img
-        src="../images/image2.webp"
-        alt="Italian Trulli"
-        style={{
-          maxWidth: "100%",
-          maxHeight: "100%",
-        }}
-      />
+      {
+        ArtEntries.map(ArtEntry => (
+          <div>
+            <img
+              src={ArtEntry.thumbnail}
+              alt={ArtEntry.name}
+              style={{
+                maxWidth: "100%",
+                maxHeight: "100%",
+              }}
+            />
 
-      <div className={classes.imageTitle}>
-        <p>McLaren Campaign - June 2020</p>
-      </div>
-
-      <img
-        src="../images/image1.jpeg"
-        alt="Italian Trulli"
-        style={{
-          maxWidth: "100%",
-          maxHeight: "100%",
-        }}
-      />
-
-      <div className={classes.imageTitle}>
-        <p>Hedi Slimane - August 2019</p>
-      </div>
+            <div className={classes.imageTitle}>
+              <p>{ArtEntry.name} - {ArtEntry.date}</p>
+            </div>
+          </div>
+        ))
+      }
     </div>
   );
 }

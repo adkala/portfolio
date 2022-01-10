@@ -1,6 +1,7 @@
 import { makeStyles } from "@mui/styles";
 import { useState } from "react";
 import TechEntryExtend from "./TechEntryExtend";
+import { ITechEntry } from "./TechEntries";
 
 const useStyles = makeStyles({
   descriptionText: {
@@ -16,29 +17,10 @@ const useStyles = makeStyles({
     "&:hover": {
       cursor: "pointer",
     },
-  },
-  noUserSelect: {
-    userSelect: "none",
-    msUserSelect: "none",
-    WebkitUserSelect: "none",
-  },
+  }
 });
 
-interface ILink {
-  title: string,
-  link: string
-}
-
-interface IEntry {
-  name: string;
-  description: string;
-  date: string;
-  technologies: string[];
-  links: ILink[];
-  imageLocations: string[];
-}
-
-const Entry: React.FC<IEntry> = ({
+const Entry: React.FC<ITechEntry> = ({
   name,
   description,
   date,
@@ -51,8 +33,7 @@ const Entry: React.FC<IEntry> = ({
     extended: false,
   });
 
-  const toggleSlide = () => setState({ extended: !state.extended });
-
+  const toggleSlide = () => setState({extended: !state.extended});
   return (
     <>
       <tr>
@@ -64,7 +45,7 @@ const Entry: React.FC<IEntry> = ({
         </td>
         <td className={classes.padding}>{date}</td>
         <td
-          className={`${classes.padding} ${classes.hover} ${classes.noUserSelect}`}
+          className={`${classes.padding} ${classes.hover} noselect`}
           onClick={toggleSlide}
         >
           {!state.extended ? "Expand" : "Close"}
@@ -80,6 +61,8 @@ const Entry: React.FC<IEntry> = ({
         imageLocations={imageLocations}
         extended={state.extended}
       />
+
+
     </>
   );
 };

@@ -1,4 +1,18 @@
-const TechEntries = [
+interface ITechEntry {
+  name: string,
+  description: string,
+  date: string,
+  technologies: string[],
+  links: ILink[],
+  imageLocations: string[]
+}
+
+interface ILink {
+  title: string;
+  link: string;
+}
+
+const TechEntries: ITechEntry[] = [
     {
       name: "Git Clone",
       description:
@@ -51,3 +65,4 @@ const TechEntries = [
   ];
   
   export default TechEntries;
+  export type {ILink, ITechEntry};

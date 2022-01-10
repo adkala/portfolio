@@ -5,8 +5,9 @@ import Entries from "./TechEntries";
 
 const useStyles = makeStyles(() => ({
   content: {
-    paddingTop: "12.75rem",
-    paddingRight: "2.5rem",
+    marginTop: "12.75rem",
+    marginRight: "2.5rem",
+    marginBottom: "3.5rem",
     maxWidth: "60rem",
   },
   table: {

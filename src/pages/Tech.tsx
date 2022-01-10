@@ -1,6 +1,7 @@
 import { makeStyles } from "@mui/styles";
-import Content from "../components/Tech/TechContent";
 import Aside from "../components/Aside";
+import Content from "../components/tech/TechContent";
+import Footer from "../components/Footer";
 
 const useStyles = makeStyles(() => ({
   parent: {
@@ -12,20 +13,22 @@ const useStyles = makeStyles(() => ({
     width: "100%",
     display: "flex",
     justifyContent: "space-between",
+    minHeight: "100vh"
   },
 }));
 
-const Technology: React.FC = () => {
+const Tech: React.FC = () => {
   const classes = useStyles();
 
   return (
     <div className={classes.parent}>
       <div className={classes.body}>
-          <Content />
+        <Content />
         <Aside />
       </div>
+      <Footer />
     </div>
   );
 };
 
-export default Technology;
+export default Tech;

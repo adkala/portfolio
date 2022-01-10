@@ -36,9 +36,18 @@ const useStyles = makeStyles(() => ({
   bold: {
     fontWeight: 400,
   },
+  miniAside: {
+    paddingTop:"0rem",
+    marginRight: "0rem",
+    textAlign: "right"
+  }
 }));
 
-const Aside: React.FC = () => {
+interface IAside {
+  mini?: boolean
+}
+
+const Aside: React.FC<IAside> = ({mini=false}) => {
   const classes = useStyles();
   const location = useLocation();
   const history = useHistory();
@@ -58,7 +67,7 @@ const Aside: React.FC = () => {
   return (
     <div className={classes.column}>
       <div>
-        <div className={classes.aside}>
+        <div className={!mini ? classes.aside : classes.miniAside}>
           <p>Addison Kalanther</p>
           <p>
             <span
@@ -80,36 +89,40 @@ const Aside: React.FC = () => {
             </span>
           </p>
 
-          <div className={classes.spacer} />
+          {!mini && (
+            <>
+              <div className={classes.spacer} />
 
-          <p>
-            EECS and Fine Arts student at UC Berkeley. Exploring the
-            intersection between computer science and design
-          </p>
+              <p>
+                EECS and Fine Arts student at UC Berkeley. Exploring the
+                intersection between computer science and design
+              </p>
 
-          <div className={classes.spacer} />
+              <div className={classes.spacer} />
 
-          <p>
-            <span
-              className={classes.onClick}
-              onClick={() => redirect(instagram)}
-            >
-              Instagram
-            </span>
-          </p>
-          <p>
-            <span
-              className={classes.onClick}
-              onClick={() => redirect(linkedin)}
-            >
-              LinkedIn
-            </span>
-          </p>
-          <p>
-            <span className={classes.onClick} onClick={() => redirect(github)}>
-              GitHub
-            </span>
-          </p>
+              <p>
+                <span
+                  className={classes.onClick}
+                  onClick={() => redirect(instagram)}
+                >
+                  Instagram
+                </span>
+              </p>
+              <p>
+                <span
+                  className={classes.onClick}
+                  onClick={() => redirect(linkedin)}
+                >
+                  LinkedIn
+                </span>
+              </p>
+              <p>
+                <span className={classes.onClick} onClick={() => redirect(github)}>
+                  GitHub
+                </span>
+              </p>
+            </>
+          )}
         </div>
       </div>
     </div>

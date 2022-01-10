@@ -1,4 +1,7 @@
 import { makeStyles } from "@mui/styles";
+import { useState } from "react";
+import ImageViewer from "../ImageViewer";
+import { ITechEntry } from "./TechEntries";
 
 const useStyles = makeStyles({
   container: {
@@ -33,18 +36,7 @@ const useStyles = makeStyles({
   },
 });
 
-interface ILink {
-  title: string;
-  link: string;
-}
-
-interface IEntryExtend {
-  name: string;
-  description: string;
-  date: string;
-  technologies: string[];
-  links: ILink[];
-  imageLocations: string[];
+interface IEntryExtend extends ITechEntry{
   extended: boolean;
 }
 
@@ -55,9 +47,23 @@ const EntryExtend: React.FC<IEntryExtend> = ({
   technologies,
   links,
   imageLocations,
-  extended,
+  extended
 }) => {
   const classes = useStyles();
+  const [state, setState] = useState({
+    imageViewer: false,
+    imageIndex: 0
+  });
+
+
+  const openImageViewer = (index: number) => {
+    document.body.style.overflow = "hidden";
+    setState({imageViewer: true, imageIndex: index})
+  };
+  const closeImageViewer = () => {
+    document.body.style.overflow = "visible"
+    setState({...state, imageViewer: false});
+  };
 
   const linkOnClick = (url: string) => {
     const newWindow = window.open(
@@ -69,63 +75,76 @@ const EntryExtend: React.FC<IEntryExtend> = ({
   };
 
   return (
-    <tr>
-      <td colSpan={4}>
-        <div
-          className={`${classes.container} ${!extended ? classes.slide : ""}`}
-        >
-          <p className={classes.bolder}>{name}</p>
-          <p className={`${classes.bolder} ${classes.margin}`}>{date}</p>
-          <p className={classes.margin}>{description}</p>
-          <p className={classes.margin}>
-            Technologies:{" "}
-            {technologies.slice(0, -1).map((tech) => (
-              <span>{tech}, </span>
-            ))}
-            {technologies[technologies.length - 1]}
-          </p>
-          <p className={classes.margin}>
-            Links:{" "}
-            {links.length > 1
-              ? links.slice(0, -1).map((link) => (
+    <>
+      <tr>
+        <td colSpan={4}>
+          <div
+            className={`${classes.container} ${!extended ? classes.slide : ""}`}
+          >
+            <p className={classes.bolder}>{name}</p>
+            <p className={`${classes.bolder} ${classes.margin}`}>{date}</p>
+            <p className={classes.margin}>{description}</p>
+            <p className={classes.margin}>
+              Technologies:{" "}
+              {technologies.slice(0, -1).map((tech) => (
+                <span>{tech}, </span>
+              ))}
+              {technologies[technologies.length - 1]}
+            </p>
+            <p className={classes.margin}>
+              Links:{" "}
+              {links.length > 1
+                ? links.slice(0, -1).map((link) => (
+                    <span
+                      className={classes.hover}
+                      onClick={() => linkOnClick(link.link)}
+                    >
+                      {link.title},{" "}
+                    </span>
+                  ))
+                : ""}
+              {
+                links.slice(links.length - 1, links.length).map((link) => (
                   <span
                     className={classes.hover}
                     onClick={() => linkOnClick(link.link)}
                   >
-                    {link.title},{" "}
+                    {link.title}
                   </span>
-                ))
+                )) /* Work around for odd undefined error for container data type */
+              }
+            </p>
+            {imageLocations.length > 1
+              ? imageLocations
+                  .slice(0, -1)
+                  .map((imageLocation, index) => (
+                    <img
+                      src={imageLocation}
+                      alt={imageLocation}
+                      className={`${classes.img} ${classes.hover} ${classes.margin2x}`}
+                      onClick={() => {openImageViewer(index)}}
+                    />
+                  ))
               : ""}
-            {
-              links.slice(links.length - 1, links.length).map((link) => (
-                <span
-                  className={classes.hover}
-                  onClick={() => linkOnClick(link.link)}
-                >
-                  {link.title}
-                </span>
-              )) /* Work around for odd undefined error for container data type */
-            }
-          </p>
-          {imageLocations.length > 1
-            ? imageLocations
-                .slice(0, -1)
-                .map((imageLocation) => (
-                  <img
-                    src={imageLocation}
-                    alt={imageLocation}
-                    className={`${classes.img} ${classes.hover} ${classes.margin2x}`}
-                  />
-                ))
-            : ""}
-          <img
-            src={imageLocations[imageLocations.length - 1]}
-            alt={imageLocations[imageLocations.length - 1]}
-            className={`${classes.img} ${classes.hover}`}
-          />
-        </div>
-      </td>
-    </tr>
+            <img
+              src={imageLocations[imageLocations.length - 1]}
+              alt={imageLocations[imageLocations.length - 1]}
+              className={`${classes.img} ${classes.hover}`}
+              onClick={() => openImageViewer(imageLocations.length - 1)}
+            />
+          </div>
+        </td>
+      </tr>
+
+      {state.imageViewer && (
+        <ImageViewer 
+          title={name}
+          imageLocations={imageLocations}
+          index={state.imageIndex}
+          closeImageViewer={closeImageViewer}
+        />
+      )}
+    </>
   );
 };
 
