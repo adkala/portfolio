@@ -17,7 +17,8 @@ const AsideMini: React.FC = () => {
       <p>
         <span
           className={`${
-            window && window.location.href.indexOf("/art") !== -1
+            typeof window != "undefined" &&
+            window.location.href.indexOf("/art") !== -1
               ? classes.bold
               : ""
           }`}
@@ -27,7 +28,8 @@ const AsideMini: React.FC = () => {
         |{" "}
         <span
           className={`${
-            window && window.location.href.indexOf("/tech") !== -1
+            typeof window != "undefined" &&
+            window.location.href.indexOf("/tech") !== -1
               ? classes.bold
               : ""
           }`}
