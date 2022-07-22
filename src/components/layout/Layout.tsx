@@ -1,7 +1,8 @@
-import { makeStyles } from "@mui/styles";
-import React, { ReactElement, useEffect, useState } from "react";
-import Aside from "../aside/Aside";
 import Footer from "../Footer";
+import Aside from "../aside/Aside";
+import { makeStyles } from "@mui/styles";
+import { debounce } from "lodash";
+import React, { ReactElement, useEffect, useState } from "react";
 
 const useStyles = makeStyles(() => ({
   parent: {
@@ -38,13 +39,11 @@ const useStyles = makeStyles(() => ({
     },
   },
   content: {
-    paddingTop: "7.5rem",
     paddingRight: "1.25rem",
     maxWidth: "60rem",
     "@media (max-width:1000px)": {
       paddingRight: "0rem",
       maxWidth: "100%",
-      paddingTop: "0",
     },
   },
 }));
@@ -56,13 +55,15 @@ interface ILayout {
 const Layout: React.FC<ILayout> = ({ children }) => {
   const classes = useStyles();
 
-  const [isDesktop, setDesktop] = useState(window.innerWidth > 1000);
+  const [isDesktop, setDesktop] = useState(false);
 
-  const updateMedia = () => {
-    setDesktop(window.innerWidth > 1000);
-  };
+  const updateMedia = () =>
+    debounce(() => {
+      setDesktop(window.innerWidth > 1000);
+    }, 500);
 
   useEffect(() => {
+    updateMedia();
     window.addEventListener("resize", updateMedia);
     return () => window.removeEventListener("resize", updateMedia);
   });

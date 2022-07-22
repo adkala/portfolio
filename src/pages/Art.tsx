@@ -1,7 +1,7 @@
-import React from "react";
+import ArtEntry from "../components/art/ArtEntryView";
 import Layout from "../components/layout/Layout";
 import { graphql } from "gatsby";
-import ArtEntry from "../components/art/ArtEntryView";
+import React from "react";
 
 interface IArt {
   data: any;

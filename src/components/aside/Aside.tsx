@@ -1,6 +1,6 @@
+import AsideMini from "./AsideMini";
 import { makeStyles } from "@mui/styles";
 import React from "react";
-import AsideMini from "./AsideMini";
 
 const useStyles = makeStyles(() => ({
   top: {
@@ -36,7 +36,7 @@ const useStyles = makeStyles(() => ({
   spacer2: {
     height: "1rem",
     width: "100%",
-  }
+  },
 }));
 
 interface IAside {

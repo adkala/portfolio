@@ -1,7 +1,7 @@
-import React from "react";
 import Layout from "../components/layout/Layout";
-import { graphql } from "gatsby";
 import TechTable from "../components/tech/TechTable";
+import { graphql } from "gatsby";
+import React from "react";
 
 interface ITech {
   data: any;

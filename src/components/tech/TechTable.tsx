@@ -1,19 +1,17 @@
-import "./TechTable.css";
-
-import React from "react";
-import { makeStyles } from "@mui/styles";
 import TechEntryView from "./TechEntryView";
+import "./TechTable.css";
+import { makeStyles } from "@mui/styles";
+import React from "react";
 
 const useStyles = makeStyles(() => ({
   content: {
-    marginTop: "12.75rem",
+    marginTop: "2.5rem",
     marginBottom: "3.5rem",
     maxWidth: "60rem",
     marginLeft: "1rem",
     "@media (max-width:1000px)": {
       paddingRight: "2.5rem",
       paddingLeft: "1.25rem",
-      marginTop: "2.5rem",
     },
   },
   table: {

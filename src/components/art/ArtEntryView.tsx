@@ -1,7 +1,7 @@
-import React from "react";
 import { makeStyles } from "@mui/styles";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from "react";
 
 const useStyles = makeStyles(() => ({
   content: {

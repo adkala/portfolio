@@ -17,7 +17,9 @@ const AsideMini: React.FC = () => {
       <p>
         <span
           className={`${
-            window.location.href.indexOf("/art") !== -1 ? classes.bold : ""
+            window && window.location.href.indexOf("/art") !== -1
+              ? classes.bold
+              : ""
           }`}
         >
           <Link to="/art">Art</Link>
@@ -25,7 +27,9 @@ const AsideMini: React.FC = () => {
         |{" "}
         <span
           className={`${
-            window.location.href.indexOf("/tech") !== -1 ? classes.bold : ""
+            window && window.location.href.indexOf("/tech") !== -1
+              ? classes.bold
+              : ""
           }`}
         >
           <Link to="/tech">Technology</Link>

@@ -1,8 +1,7 @@
-import React from "react";
-
-import { makeStyles } from "@mui/styles";
-import { useState } from "react";
 import TechExtendView from "./TechExtendView";
+import { makeStyles } from "@mui/styles";
+import React from "react";
+import { useState } from "react";
 
 const useStyles = makeStyles({
   descriptionText: {

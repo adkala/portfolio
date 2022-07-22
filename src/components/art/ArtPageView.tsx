@@ -1,16 +1,14 @@
-import React from "react";
 import { makeStyles } from "@mui/styles";
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from "react";
 
 const useStyles = makeStyles(() => ({
   content: {
-    marginTop: "5.25rem",
     maxHeight: "100%",
     padding: "0 1.25rem",
     "@media (max-width:1000px)": {
       padding: "0 2rem",
-      marginTop: "0",
     },
   },
   back: {
