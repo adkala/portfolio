@@ -1,0 +1,2 @@
+Fix mobile image loading and margins/borders for mobile
+Fix mobile sizing for tech grid

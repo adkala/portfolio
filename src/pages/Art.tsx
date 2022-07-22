@@ -1,33 +1,39 @@
-import { makeStyles } from "@mui/styles";
-import Aside from "../components/Aside";
-import Content from "../components/art/ArtContent";
-import Footer from "../components/Footer";
+import React from "react";
+import Layout from "../components/layout/Layout";
+import { graphql } from "gatsby";
+import ArtEntry from "../components/art/ArtEntryView";
 
-const useStyles = makeStyles(() => ({
-  parent: {
-    marginRight: "auto",
-    marginLeft: "auto",
-    width: "80rem",
-  },
-  body: {
-    width: "100%",
-    display: "flex",
-    justifyContent: "space-between",
-  },
-}));
+interface IArt {
+  data: any;
+}
 
-const Art: React.FC = () => {
-  const classes = useStyles();
+const Art: React.FC<IArt> = ({ data }) => (
+  <Layout>
+    <>
+      {data.allArt.nodes.map((node: any) => (
+        <ArtEntry node={node} />
+      ))}
+    </>
+  </Layout>
+);
 
-  return (
-    <div className={classes.parent}>
-      <div className={classes.body}>
-        <Content />
-        <Aside />
-      </div>
-      <Footer />
-    </div>
-  );
-};
+export const query = graphql`
+  {
+    allArt {
+      nodes {
+        page
+        name
+        description
+        date
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        pageSlug: gatsbyPath(filePath: "/art/{art.page}")
+      }
+    }
+  }
+`;
 
 export default Art;

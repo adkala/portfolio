@@ -1,34 +1,38 @@
-import { makeStyles } from "@mui/styles";
-import Aside from "../components/Aside";
-import Content from "../components/tech/TechContent";
-import Footer from "../components/Footer";
+import React from "react";
+import Layout from "../components/layout/Layout";
+import { graphql } from "gatsby";
+import TechTable from "../components/tech/TechTable";
 
-const useStyles = makeStyles(() => ({
-  parent: {
-    marginRight: "auto",
-    marginLeft: "auto",
-    width: "80rem",
-  },
-  body: {
-    width: "100%",
-    display: "flex",
-    justifyContent: "space-between",
-    minHeight: "100vh"
-  },
-}));
+interface ITech {
+  data: any;
+}
 
-const Tech: React.FC = () => {
-  const classes = useStyles();
+const Tech: React.FC<ITech> = ({ data }) => (
+  <Layout>
+    <TechTable data={data} />
+  </Layout>
+);
 
-  return (
-    <div className={classes.parent}>
-      <div className={classes.body}>
-        <Content />
-        <Aside />
-      </div>
-      <Footer />
-    </div>
-  );
-};
+export const query = graphql`
+  {
+    allTech {
+      nodes {
+        name
+        description
+        date
+        technologies
+        links {
+          title
+          link
+        }
+        images {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default Tech;

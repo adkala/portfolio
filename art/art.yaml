@@ -1,0 +1,17 @@
+- page: "mclaren"
+  name: "McLaren Campaign"
+  date: "June 2020"
+  description: "Like many exotic cars, the 2022 McLaren 720S offers a lot of show and serious go. The thrills include explosive launches and the kind of ethereal agility that'll send serious drivers into ecstasy. At the heart of McLaren's lightweight, carbon-fiber-intensive dream machine is a 710-hp twin-turbo V-8. While the engine has considerable turbo lag, the short pause after you stomp the accelerator allows a beat to prepare for a rush to 100 mph in just 5.2 seconds and the ability to reach a claimed 212 mph."
+  thumbnail: "../images/mclaren1.jpeg"
+  images:
+    - "../images/mclaren1.jpeg"
+    - "../images/mclaren2.jpeg"
+    - "../images/mclaren3.jpeg"
+    - "../images/mclaren4.jpeg"
+- page: "hedislimane"
+  name: "Hedi Slimane"
+  date: "August 2019"
+  description: "Hedi Slimane is a French photographer and fashion designer. From 2000 to 2007, he held the position of creative director for Dior Homme. From 2012 to 2016, he was the creative director for Yves Saint Laurent. Since February 1, 2018, Slimane has been the creative, artistic and image director of Celine."
+  thumbnail: "../images/hedislimane1.jpeg"
+  images:
+    - "../images/hedislimane1.jpeg"
