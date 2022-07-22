@@ -3,6 +3,7 @@ import Aside from "../aside/Aside";
 import { makeStyles } from "@mui/styles";
 import { debounce } from "lodash";
 import React, { ReactElement, useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 const useStyles = makeStyles(() => ({
   parent: {
@@ -90,6 +91,13 @@ const Layout: React.FC<ILayout> = ({ children }) => {
 
   return (
     <div className={classes.parent}>
+      <Helmet>
+        <title>addikala</title>
+        <meta
+          name="description"
+          content="Portfolio website for Addison Kalanther"
+        />
+      </Helmet>
       {isDesktop ? DesktopInterface : MobileInterface}
       <Footer />
     </div>
