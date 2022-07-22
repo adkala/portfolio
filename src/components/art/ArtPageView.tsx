@@ -10,6 +10,7 @@ const useStyles = makeStyles(() => ({
     padding: "0 1.25rem",
     "@media (max-width:1000px)": {
       padding: "0 2rem",
+      marginTop: "0",
     },
   },
   back: {

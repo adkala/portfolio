@@ -29,7 +29,8 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-typescript",
       options: {
-        istTSX: true
+        isTSX: true,
+        allExtensions: true
       }
     },
     {
@@ -53,6 +54,7 @@ const config: GatsbyConfig = {
         name: `tech`,
       }
     },
+
   ]
 };
 
