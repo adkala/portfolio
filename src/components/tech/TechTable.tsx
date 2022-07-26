@@ -5,13 +5,14 @@ import React from "react";
 
 const useStyles = makeStyles(() => ({
   content: {
-    marginTop: "2.5rem",
+    marginTop: "11.5rem",
     marginBottom: "3.5rem",
     maxWidth: "60rem",
     marginLeft: "1rem",
     "@media (max-width:1000px)": {
       paddingRight: "2.5rem",
       paddingLeft: "1.25rem",
+      marginTop: "2.5rem",
     },
   },
   table: {

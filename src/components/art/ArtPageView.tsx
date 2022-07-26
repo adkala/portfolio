@@ -1,10 +1,11 @@
 import { makeStyles } from "@mui/styles";
 import { Link } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 import React from "react";
 
 const useStyles = makeStyles(() => ({
   content: {
+    marginTop: "5.25rem",
     maxHeight: "100%",
     padding: "0 1.25rem",
     "@media (max-width:1000px)": {
@@ -15,6 +16,7 @@ const useStyles = makeStyles(() => ({
     marginBottom: "1.5rem",
     "&:hover": {
       cursor: "pointer",
+      textDecoration: "underline",
     },
   },
   name: {
@@ -53,7 +55,7 @@ const ArtPageView: React.FC<IArtPageView> = ({ data }) => {
         <p className={classes.date}>{data.date}</p>
         <p className={classes.description}>{data.description}</p>
       </div>
-      {data.images.map((image, index) => (
+      {data.images.map((image: ImageDataLike, index: number) => (
         <div className={classes.image}>
           <GatsbyImage image={getImage(image)} alt={`${data.name} ${index}`} />
         </div>

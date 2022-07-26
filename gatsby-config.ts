@@ -12,6 +12,7 @@ const config: GatsbyConfig = {
     "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-material-ui",
     {
       resolve: `gatsby-transformer-yaml`,
       options: {

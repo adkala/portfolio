@@ -19,6 +19,7 @@ const useStyles = makeStyles({
   hover: {
     "&:hover": {
       cursor: "pointer",
+      textDecoration: "underline",
     },
   },
   date: {

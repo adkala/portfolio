@@ -88,7 +88,7 @@ const Aside: React.FC<IAside> = ({ desktop }) => {
               target="_blank"
               rel="noreferrer"
             >
-              Github
+              GitHub
             </a>
           </p>
         </div>
