@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from "gatsby";
+import path from "path";
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -13,6 +14,12 @@ const config: GatsbyConfig = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-material-ui",
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: path.resolve(`${__dirname}/src/components/layout/Layout.tsx`)
+      }
+    },
     {
       resolve: `gatsby-transformer-yaml`,
       options: {

@@ -1,4 +1,3 @@
-import Layout from "../components/layout/Layout";
 import TechTable from "../components/tech/TechTable";
 import { graphql } from "gatsby";
 import React from "react";
@@ -9,14 +8,12 @@ interface ITech {
 }
 
 const Tech: React.FC<ITech> = ({ data }) => (
-  <Layout>
-    <>
-      <Helmet>
-        <title>addikala/tech</title>
-      </Helmet>
-      <TechTable data={data} />
-    </>
-  </Layout>
+  <>
+    <Helmet>
+      <title>addikala/tech</title>
+    </Helmet>
+    <TechTable data={data} />
+  </>
 );
 
 export const query = graphql`

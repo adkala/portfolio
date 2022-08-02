@@ -1,30 +1,23 @@
-import { makeStyles } from "@mui/styles";
+import { styled } from "@mui/material/styles";
 import React from "react";
 
-const useStyles = makeStyles({
-  container: {
-    display: "flex",
-    justifyContent: "center",
-    margin: "1rem 2.5rem",
-    position: "fixed",
-    bottom: 0,
-  },
-  text: {
-    opacity: 0.33,
-    textTransform: "none",
-  },
-});
+const Container = styled("div")`
+  display: flex;
+  justify-content: center;
+  margin: 1rem 2.5rem;
+  position: fixed;
+  bottom: 0;
+`;
 
-const Footer: React.FC = () => {
-  const classes = useStyles();
+const Text = styled("p")`
+  opacity: 0.33;
+  text-transform: none;
+`;
 
-  return (
-    <div className={classes.container}>
-      <p className={classes.text}>
-        Designed and Developed by Addison Kalanther ©
-      </p>
-    </div>
-  );
-};
+const Footer: React.FC = () => (
+  <Container>
+    <Text>Designed and Developed by Addison Kalanther ©</Text>
+  </Container>
+);
 
 export default Footer;
