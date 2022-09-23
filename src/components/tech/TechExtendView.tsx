@@ -1,3 +1,4 @@
+import { styled } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
@@ -41,6 +42,22 @@ const useStyles = makeStyles({
   },
 });
 
+const Container = styled("div")`
+  padding: 0.75rem 3rem 1.75rem 3rem;
+  max-width: 40rem;
+  @media (max-width: 600px) {
+    padding: 0.75rem 0rem 1.75rem 0rem;
+  }
+`;
+
+const Bold = styled("p")`
+  font-weight: 400;
+`;
+
+const Margin = styled("p")`
+  margin-bottom: 1.25rem;
+`;
+
 interface ITechExtendView {
   node: any;
   extended: boolean;
@@ -61,7 +78,7 @@ const TechExtendView: React.FC<ITechExtendView> = ({ node, extended }) => {
             <p className={classes.margin}>{node.description}</p>
             <p className={classes.margin}>
               Technologies:{" "}
-              {node.technologies.slice(0, -1).map((tech) => (
+              {node.technologies.slice(0, -1).map((tech: any) => (
                 <span>{tech}, </span>
               ))}
               {node.technologies[node.technologies.length - 1]}
@@ -69,7 +86,7 @@ const TechExtendView: React.FC<ITechExtendView> = ({ node, extended }) => {
             <p className={classes.margin}>
               Links:{" "}
               {node.links.length > 1
-                ? node.links.slice(0, -1).map((link) => (
+                ? node.links.slice(0, -1).map((link: any) => (
                     <span className={classes.hover}>
                       <a
                         href={"http://" + link.link}

@@ -1,70 +1,68 @@
 import TechEntryView from "./TechEntryView";
 import "./TechTable.css";
-import { makeStyles } from "@mui/styles";
+import { styled } from "@mui/material/styles";
 import React from "react";
 
-const useStyles = makeStyles(() => ({
-  content: {
-    marginTop: "11.5rem",
-    marginBottom: "3.5rem",
-    maxWidth: "60rem",
-    marginLeft: "1rem",
-    "@media (max-width:1000px)": {
-      paddingRight: "2.5rem",
-      paddingLeft: "1.25rem",
-      marginTop: "2.5rem",
-    },
-  },
-  table: {
-    fontWeight: 300,
-  },
-  name: {
-    width: "12rem",
-  },
-  description: {
-    width: "28rem",
-    "@media (max-width:1200px)": {
-      width: "20rem",
-    },
-    "@media (max-width:1000px)": {
-      width: "18rem",
-    },
-  },
-  date: {
-    width: "14em",
-    "@media (max-width:520px)": {
-      display: "none",
-    },
-  },
-  padding: {
-    paddingBottom: "1rem",
-  },
-}));
+const Content = styled("div")`
+  margin-top: 11.5rem;
+  margin-bottom: 3.5rem;
+  max-width: 60rem;
+  margin-left: 1rem;
+
+  @media (max-width: 1000px) {
+    padding-right: 2.5rem;
+    padding-left: 1.25rem;
+    margin-top: 2.5rem;
+  }
+`;
+
+const Table = styled("table")`
+  font-weight: 300;
+`;
+
+const Header = styled("th")`
+  padding-bottom: 1rem;
+`;
+
+const Name = styled(Header)`
+  width: 12rem;
+`;
+
+const Description = styled(Header)`
+  width: 28rem;
+  @media (max-width: 1200px) {
+    width: 20rem;
+  }
+  @media (max-width: 1000px) {
+    width: 18rem;
+  }
+`;
+
+const Date = styled(Header)`
+  width: 14rem;
+  @media (max-width: 520px) {
+    display: none;
+  }
+`;
 
 interface ITechTable {
   data: any;
 }
 
-const TechTable: React.FC<ITechTable> = ({ data }) => {
-  const classes = useStyles();
-
-  return (
-    <div className={classes.content}>
-      <table>
-        <tr>
-          <th className={`${classes.name} ${classes.padding}`}>Name</th>
-          <th className={`${classes.description} ${classes.padding}`}>
-            Description
-          </th>
-          <th className={`${classes.date} ${classes.padding}`}>Date</th>
-          <th></th>
-        </tr>
-        {data.allTech.nodes.map((node: any) => (
-          <TechEntryView node={node} />
-        ))}
-      </table>
-    </div>
-  );
-};
+const TechTable: React.FC<ITechTable> = ({ data }) => (
+  <Content>
+    <Table>
+      <tr>
+        <Name>Name</Name>
+        <Description>Description</Description>
+        <Date>Date</Date>
+        <th></th>
+      </tr>
+      {data.allTech.nodes.map((node: any) => (
+        <TechEntryView node={node} />
+      ))}
+    </Table>
+  </Content>
+);
 
 export default TechTable;
