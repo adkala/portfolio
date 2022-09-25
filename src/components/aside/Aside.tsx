@@ -1,100 +1,97 @@
 import AsideMini from "./AsideMini";
-import { makeStyles } from "@mui/styles";
+import { styled } from "@mui/material/styles";
 import React from "react";
 
-const useStyles = makeStyles(() => ({
-  top: {
-    width: "100%",
-    textAlign: "right",
-    top: 0,
-    backgroundColor: "white",
-    zIndex: 1,
-  },
-  sticky: {
-    position: "sticky",
-  },
-  topWrap: {
-    padding: "1rem 2.5rem",
-  },
-  description: {
-    width: "100%",
-    textAlign: "right",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "end",
-  },
-  descriptionWrap: {
-    padding: "0 2.5rem 3rem 0",
-  },
-  title: {
-    maxWidth: "12rem",
-  },
-  spacer: {
-    height: "2rem",
-    width: "12rem",
-  },
-  spacer2: {
-    height: "1rem",
-    width: "100%",
-  },
-}));
+const Top = styled("div")`
+  width: 100%;
+  text-align: right;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+  position: sticky;
+`;
+
+const TopWrap = styled("div")`
+  padding: 1rem 2.5rem;
+`;
+
+const Description = styled("div")`
+  width: 100%;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+`;
+
+const DescriptionWrap = styled("div")`
+  padding: 0 2.5rem 3rem 0;
+`;
+
+const Title = styled("p")`
+  max-width: 12rem;
+`;
+
+const Spacer = styled("div")`
+  height: 2rem;
+  width: 12rem;
+`;
+
+const Spacer2 = styled("div")`
+  height: 1rem;
+  width: 100%;
+`;
 
 interface IAside {
   desktop?: boolean;
 }
 
-const Aside: React.FC<IAside> = ({ desktop }) => {
-  const classes = useStyles();
+const Aside: React.FC<IAside> = () => (
+  <>
+    <Spacer />
+    <Top>
+      <TopWrap>
+        <AsideMini />
+      </TopWrap>
+    </Top>
+    <div />
+    <Description>
+      <DescriptionWrap>
+        <Title>
+          EECS Student at UC Berkeley who likes design and art. I put stuff here
+          when I'm bored.
+        </Title>
 
-  return (
-    <>
-      <div className={classes.spacer} />
-      <div className={`${classes.top} ${!desktop ? classes.sticky : ""}`}>
-        <div className={classes.topWrap}>
-          <AsideMini />
-        </div>
-      </div>
-      <div />
-      <div className={classes.description}>
-        <div className={classes.descriptionWrap}>
-          <p className={classes.title}>
-            EECS Student at UC Berkeley who likes design and art. I put stuff
-            here when I'm bored.
-          </p>
-
-          <div className={classes.spacer2} />
-
-          <p>
-            <a
-              href="https://www.instagram.com/addikala"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Instagram
-            </a>
-          </p>
-          <p>
-            <a
-              href="https://www.linkedin.com/in/addikala"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn
-            </a>
-          </p>
-          <p>
-            <a
-              href="https://www.github.com/adkala"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-            </a>
-          </p>
-        </div>
-      </div>
-    </>
-  );
-};
+        <Spacer2 />
+        <p>
+          <a
+            href="https://www.instagram.com/addikala"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Instagram
+          </a>
+        </p>
+        <p>
+          <a
+            href="https://www.linkedin.com/in/addikala"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
+        </p>
+        <p>
+          <a
+            href="https://www.github.com/adkala"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
+        </p>
+      </DescriptionWrap>
+    </Description>
+  </>
+);
 
 export default Aside;

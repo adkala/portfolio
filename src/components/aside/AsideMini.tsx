@@ -1,47 +1,34 @@
-import NoSsr from "@mui/base/NoSsr";
-import { makeStyles } from "@mui/styles";
+import { styled } from "@mui/material/styles";
 import { Link } from "gatsby";
 import React from "react";
 
-const useStyles = makeStyles(() => ({
-  bold: {
-    fontWeight: 400,
-  },
-}));
+const Tab = styled("span")`
+  ${(props: { bold: boolean }) => (props.bold ? "font-weight: 400;" : "")}
+`;
 
-const AsideMini: React.FC = () => {
-  const classes = useStyles();
-
-  return (
-    <div>
-      <p>Addison Kalanther</p>
-      <NoSsr>
-        <p>
-          <span
-            className={`${
-              typeof window != "undefined" &&
-              window.location.href.indexOf("/art") !== -1
-                ? classes.bold
-                : ""
-            }`}
-          >
-            <Link to="/art">Art</Link>
-          </span>{" "}
-          |{" "}
-          <span
-            className={`${
-              typeof window != "undefined" &&
-              window.location.href.indexOf("/tech") !== -1
-                ? classes.bold
-                : ""
-            }`}
-          >
-            <Link to="/tech">Technology</Link>
-          </span>
-        </p>
-      </NoSsr>
-    </div>
-  );
-};
+const AsideMini: React.FC = () => (
+  <div>
+    <p>Addison Kalanther</p>
+    <p>
+      <Tab
+        bold={
+          typeof window != "undefined" &&
+          window.location.href.indexOf("/art") !== -1
+        }
+      >
+        <Link to="/art">Art</Link>
+      </Tab>{" "}
+      |{" "}
+      <Tab
+        bold={
+          typeof window != "undefined" &&
+          window.location.href.indexOf("/tech") !== -1
+        }
+      >
+        <Link to="/tech">Technology</Link>
+      </Tab>
+    </p>
+  </div>
+);
 
 export default AsideMini;

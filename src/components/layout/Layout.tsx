@@ -1,101 +1,92 @@
 import Footer from "../Footer";
 import Aside from "../aside/Aside";
-import { makeStyles } from "@mui/styles";
-import React, {
-  ReactElement,
-  useEffect,
-  useLayoutEffect,
-  useState,
-} from "react";
+import { styled } from "@mui/material/styles";
+import React, { ReactElement } from "react";
 import { Helmet } from "react-helmet";
 
-const useStyles = makeStyles(() => ({
-  parent: {
-    marginRight: "auto",
-    marginLeft: "auto",
-    maxWidth: "80rem",
-  },
-  desktopBody: {
-    maxWidth: "100%",
-    display: "flex",
-    justifyContent: "space-between",
-    minHeight: "100vh",
-    "@media (max-width:1000px)": {
-      flexDirection: "column-reverse",
-      justifyContent: "flex-start",
-    },
-  },
-  desktopContent: {
-    padding: "0 1.25rem 0 2.5rem",
-    "@media (max-width:1000px)": {
-      padding: "0",
-    },
-  },
-  desktopAside: {
-    position: "sticky",
-    display: "block",
-    top: 0,
-    minWidth: "20rem",
-  },
-  childrenWrap: {
-    padding: "0 1.25rem",
-    "@media (max-width:1000px)": {
-      padding: "0",
-    },
-  },
-  content: {
-    paddingTop: "10rem",
-    paddingRight: "1.25rem",
-    maxWidth: "60rem",
-    "@media (max-width:1000px)": {
-      paddingRight: "0rem",
-      maxWidth: "100%",
-      paddingTop: "0",
-    },
-  },
-  desktopWrapper: {
-    display: "initial",
-    "@media(max-width:1000px)": {
-      display: "none",
-    },
-  },
-  mobileWrapper: {
-    display: "none",
-    "@media(max-width:1000px)": {
-      display: "initial",
-    },
-  },
-}));
+const Parent = styled("div")`
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 80rem;
+`;
+
+const DesktopBody = styled("div")`
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  min-height: 100vh;
+  @media (max-width: 1000px) {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+  }
+`;
+
+const DesktopContent = styled("div")`
+  padding: 0 1.25rem 0 2.5rem;
+  @media (max-width: 1000px) {
+    padding: 0;
+  }
+`;
+
+const DesktopAside = styled("div")`
+  position: sticky;
+  display: block;
+  top: 0;
+  min-width: 20rem;
+`;
+
+const Content = styled("div")`
+  padding-top: 10rem;
+  padding-right: 1.25rem;
+  max-width: 60rem;
+  @media (max-width: 1000px) {
+    padding-right: 0rem;
+    max-width: 100%;
+    padding-top: 0;
+  }
+`;
+
+const DesktopWrapper = styled("div")`
+  display: initial;
+  @media (max-width: 1000px) {
+    display: none;
+  }
+`;
+
+const MobileWrapper = styled("div")`
+  display: none;
+  @media (max-width: 1000px) {
+    display: initial;
+  }
+`;
 
 interface ILayout {
   children: ReactElement;
 }
 
 const Layout: React.FC<ILayout> = ({ children }) => {
-  const classes = useStyles();
-
   const DesktopInterface = (
-    <div className={classes.desktopBody}>
-      <div className={classes.desktopContent}>
-        <div className={classes.content}>{children}</div>
-      </div>
+    <DesktopBody>
+      <DesktopContent>
+        <Content>{children}</Content>
+      </DesktopContent>
       <div>
-        <div className={classes.desktopAside}>
-          <Aside desktop={true} />
-        </div>
+        <DesktopAside>
+          <Aside />
+        </DesktopAside>
       </div>
-    </div>
+    </DesktopBody>
   );
 
   const MobileInterface = (
     <>
-      <Aside desktop={false} />
-      <div className={classes.content}>{children}</div>
+      <Aside />
+      <Content>{children}</Content>
     </>
   );
 
   return (
-    <div className={classes.parent}>
+    <Parent>
       <Helmet>
         <title>addikala</title>
         <meta
@@ -103,10 +94,10 @@ const Layout: React.FC<ILayout> = ({ children }) => {
           content="Portfolio website for Addison Kalanther"
         />
       </Helmet>
-      <div className={classes.desktopWrapper}>{DesktopInterface}</div>
-      <div className={classes.mobileWrapper}>{MobileInterface}</div>
+      <DesktopWrapper>{DesktopInterface}</DesktopWrapper>
+      <MobileWrapper>{MobileInterface}</MobileWrapper>
       <Footer />
-    </div>
+    </Parent>
   );
 };
 

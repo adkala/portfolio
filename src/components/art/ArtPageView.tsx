@@ -1,67 +1,66 @@
-import { makeStyles } from "@mui/styles";
+import { styled } from "@mui/material/styles";
 import { Link } from "gatsby";
 import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 import React from "react";
 
-const useStyles = makeStyles(() => ({
-  content: {
-    marginTop: "5.25rem",
-    maxHeight: "100%",
-    padding: "0 1.25rem",
-    "@media (max-width:1000px)": {
-      padding: "0 2rem",
-    },
-  },
-  back: {
-    marginBottom: "1.5rem",
-    "&:hover": {
-      cursor: "pointer",
-      textDecoration: "underline",
-    },
-  },
-  name: {
-    fontWeight: 400,
-  },
-  date: {
-    fontWeight: 400,
-    marginBottom: "1.5rem",
-  },
-  description: {
-    marginBottom: "4.5rem",
-  },
-  image: {
-    marginBottom: "4.5rem",
-    width: "100%",
-    "@media (min-width:1000px)": {
-      padding: "0 1.25rem",
-    },
-  },
-}));
+const Content = styled("div")`
+  margin-top: 5.25rem;
+  max-height: 100%;
+  padding: 0 1.25rem;
+  @media (max-width: 1000px) {
+    padding: 0 2rem;
+  }
+`;
+
+const Back = styled("div")`
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const Name = styled("p")`
+  font-weight: 400;
+`;
+
+const Date = styled("p")`
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+`;
+
+const Description = styled("p")`
+  margin-bottom: 4.5rem;
+`;
+
+const Image = styled("div")`
+  margin-bottom: 4.5rem;
+  width: 100%;
+  @media (min-width: 1000px) {
+    padding: 0 1.25rem;
+  }
+`;
 
 interface IArtPageView {
   data: any;
 }
 
-const ArtPageView: React.FC<IArtPageView> = ({ data }) => {
-  const classes = useStyles();
-
-  return (
-    <>
-      <div className={classes.content}>
-        <p className={classes.back}>
-          <Link to="/art">Back</Link>
-        </p>
-        <p className={classes.name}>{data.name}</p>
-        <p className={classes.date}>{data.date}</p>
-        <p className={classes.description}>{data.description}</p>
-      </div>
-      {data.images.map((image: ImageDataLike, index: number) => (
-        <div className={classes.image}>
-          <GatsbyImage image={getImage(image)} alt={`${data.name} ${index}`} />
-        </div>
-      ))}
-    </>
-  );
-};
+const ArtPageView: React.FC<IArtPageView> = ({ data }) => (
+  <>
+    <Content>
+      <Back>
+        <Link to="/art">Back</Link>
+      </Back>
+      <Name>{data.name}</Name>
+      <Date>{data.date}</Date>
+      <Description>{data.description}</Description>
+    </Content>
+    {data.images.map((image: ImageDataLike, index: number) => (
+      <Image>
+        <GatsbyImage image={getImage(image)} alt={`${data.name} ${index}`} />
+      </Image>
+    ))}
+  </>
+);
 
 export default ArtPageView;
