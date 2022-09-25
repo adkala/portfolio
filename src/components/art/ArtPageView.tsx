@@ -14,6 +14,9 @@ const Content = styled("div")`
 
 const Back = styled("div")`
   margin-bottom: 1.5rem;
+`;
+
+const BackLink = styled(Link)`
   cursor: pointer;
   &:hover {
     text-decoration: underline;
@@ -49,7 +52,7 @@ const ArtPageView: React.FC<IArtPageView> = ({ data }) => (
   <>
     <Content>
       <Back>
-        <Link to="/art">Back</Link>
+        <BackLink to="/art">Back</BackLink>
       </Back>
       <Name>{data.name}</Name>
       <Date>{data.date}</Date>

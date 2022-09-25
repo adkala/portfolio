@@ -13,7 +13,7 @@ const AsideMini: React.FC = () => (
       <Tab
         bold={
           typeof window != "undefined" &&
-          window.location.href.indexOf("/art") !== -1
+          window.location.href.indexOf("/tech") == -1
         }
       >
         <Link to="/art">Art</Link>
