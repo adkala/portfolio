@@ -42,15 +42,15 @@ const Spacer2 = styled("div")`
 `;
 
 interface IAside {
-  desktop?: boolean;
+  page: string;
 }
 
-const Aside: React.FC<IAside> = () => (
+const Aside: React.FC<IAside> = ({ page }) => (
   <>
     <Spacer />
     <Top>
       <TopWrap>
-        <AsideMini />
+        <AsideMini page={page} />
       </TopWrap>
     </Top>
     <div />

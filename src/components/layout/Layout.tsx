@@ -62,9 +62,10 @@ const MobileWrapper = styled("div")`
 
 interface ILayout {
   children: ReactElement;
+  page: string;
 }
 
-const Layout: React.FC<ILayout> = ({ children }) => {
+const Layout: React.FC<ILayout> = ({ children, page }) => {
   const DesktopInterface = (
     <DesktopBody>
       <DesktopContent>
@@ -72,7 +73,7 @@ const Layout: React.FC<ILayout> = ({ children }) => {
       </DesktopContent>
       <div>
         <DesktopAside>
-          <Aside />
+          <Aside page={page} />
         </DesktopAside>
       </div>
     </DesktopBody>
@@ -80,7 +81,7 @@ const Layout: React.FC<ILayout> = ({ children }) => {
 
   const MobileInterface = (
     <>
-      <Aside />
+      <Aside page={page} />
       <Content>{children}</Content>
     </>
   );

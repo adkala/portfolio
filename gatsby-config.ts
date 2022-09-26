@@ -15,12 +15,6 @@ const config: GatsbyConfig = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-material-ui",
     {
-      resolve: `gatsby-plugin-layout`,
-      options: {
-        component: path.resolve(`${__dirname}/src/components/layout/Layout.tsx`)
-      }
-    },
-    {
       resolve: `gatsby-transformer-yaml`,
       options: {
         typeName: ({ node }) => {

@@ -1,4 +1,5 @@
 import ArtView from "../../components/art/ArtPageView";
+import Layout from "../../components/layout/Layout";
 import { graphql } from "gatsby";
 import React from "react";
 
@@ -7,7 +8,11 @@ interface IArtPage {
 }
 
 const ArtPage: React.FC<IArtPage> = ({ data }) => {
-  return <ArtView data={data.art} />;
+  return (
+    <Layout page="art">
+      <ArtView data={data.art} />
+    </Layout>
+  );
 };
 
 export const query = graphql`

@@ -1,4 +1,5 @@
 import ArtEntry from "../components/art/ArtEntryView";
+import Layout from "../components/layout/Layout";
 import { graphql } from "gatsby";
 import React from "react";
 import { Helmet } from "react-helmet";
@@ -12,9 +13,11 @@ const Art: React.FC<IArt> = ({ data }) => (
     <Helmet>
       <title>addikala/art</title>
     </Helmet>
-    {data.allArt.nodes.map((node: any, index: number) => (
-      <ArtEntry node={node} key={index} />
-    ))}
+    <Layout page="art">
+      {data.allArt.nodes.map((node: any, index: number) => (
+        <ArtEntry node={node} key={index} />
+      ))}
+    </Layout>
   </>
 );
 
