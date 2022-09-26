@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 
 const IndexPage: React.FC = () => {
   useEffect(() => {
-    navigate("/art");
+    navigate("/blog");
   }, []);
   return null;
 };

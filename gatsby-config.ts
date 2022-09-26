@@ -1,5 +1,4 @@
 import type { GatsbyConfig } from "gatsby";
-import path from "path";
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -19,10 +18,10 @@ const config: GatsbyConfig = {
       options: {
         typeName: ({ node }) => {
           const name = node.sourceInstanceName;
-          if (name === `art`) {
-            return `art`;
-          } else if (name == `tech`) {
-            return `tech`;
+          if (name === `blog`) {
+            return `blog`;
+          } else if (name == `projects`) {
+            return `projects`;
           }
           return name;
         },
@@ -38,8 +37,8 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/art`,
-        name: `art`,
+        path: `${__dirname}/blog`,
+        name: `blog`,
       },
     },
     {
@@ -52,8 +51,8 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/tech`,
-        name: `tech`,
+        path: `${__dirname}/projects`,
+        name: `projects`,
       },
     },
   ],
