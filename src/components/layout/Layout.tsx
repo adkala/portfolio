@@ -89,7 +89,7 @@ const Layout: React.FC<ILayout> = ({ children, page }) => {
   return (
     <Parent>
       <Helmet>
-        <title>addikala</title>
+        <title>addikala/{page}</title>
         <meta
           name="description"
           content="Portfolio website for Addison Kalanther"

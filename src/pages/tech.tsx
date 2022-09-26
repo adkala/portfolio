@@ -9,14 +9,9 @@ interface ITech {
 }
 
 const Tech: React.FC<ITech> = ({ data }) => (
-  <>
-    <Helmet>
-      <title>addikala/tech</title>
-    </Helmet>
-    <Layout page="tech">
-      <TechTable data={data} />
-    </Layout>
-  </>
+  <Layout page="tech">
+    <TechTable data={data} />
+  </Layout>
 );
 
 export const query = graphql`

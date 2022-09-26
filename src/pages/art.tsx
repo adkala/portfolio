@@ -9,16 +9,11 @@ interface IArt {
 }
 
 const Art: React.FC<IArt> = ({ data }) => (
-  <>
-    <Helmet>
-      <title>addikala/art</title>
-    </Helmet>
-    <Layout page="art">
-      {data.allArt.nodes.map((node: any, index: number) => (
-        <ArtEntry node={node} key={index} />
-      ))}
-    </Layout>
-  </>
+  <Layout page="art">
+    {data.allArt.nodes.map((node: any, index: number) => (
+      <ArtEntry node={node} key={index} />
+    ))}
+  </Layout>
 );
 
 export const query = graphql`
