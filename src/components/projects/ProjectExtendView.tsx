@@ -5,13 +5,14 @@ import React from "react";
 const Container = styled("div")`
   padding: 0.75rem 3rem 1.75rem 3rem;
   max-width: 40rem;
+
   @media (max-width: 600px) {
     padding: 0.75rem 0rem 1.75rem 0rem;
   }
 
   ${(props: { slide?: string }) =>
     props.slide && props.slide == "true"
-      ? "-ms-transform: scaleY(0); -webkit-transform: scaleY(0); transform: scaleY(0); height: 0; padding-top: 0; padding-bottom: 0;"
+      ? "-ms-transform: scaleY(0); -webkit-transform: scaleY(0); transform: scaleY(0); height: 0; padding-top: 0 !important; padding-bottom: 0 !important;"
       : ""}
 `;
 
