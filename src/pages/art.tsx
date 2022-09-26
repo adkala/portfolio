@@ -2,7 +2,6 @@ import ArtEntry from "../components/art/ArtEntryView";
 import Layout from "../components/layout/Layout";
 import { graphql } from "gatsby";
 import React from "react";
-import { Helmet } from "react-helmet";
 
 interface IArt {
   data: any;

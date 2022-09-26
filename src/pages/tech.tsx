@@ -2,7 +2,6 @@ import Layout from "../components/layout/Layout";
 import TechTable from "../components/tech/TechTable";
 import { graphql } from "gatsby";
 import React from "react";
-import { Helmet } from "react-helmet";
 
 interface ITech {
   data: any;
