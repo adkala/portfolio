@@ -23,7 +23,11 @@ interface IBlogEntryView {
 const BlogEntryView: React.FC<IBlogEntryView> = ({ node }) => (
   <div>
     <Link to={node.pageSlug}>
-      <GatsbyImage image={getImage(node.thumbnail)} alt={node.name} />
+      <GatsbyImage
+        image={getImage(node.thumbnail)}
+        alt={node.name}
+        loading={"eager"}
+      />
     </Link>
     <ImageTitle>
       <Link to={node.pageSlug}>

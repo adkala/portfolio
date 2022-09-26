@@ -60,7 +60,11 @@ const BlogPageView: React.FC<IBlogPageView> = ({ data }) => (
     </Content>
     {data.images.map((image: ImageDataLike, index: number) => (
       <Image key={index}>
-        <GatsbyImage image={getImage(image)} alt={`${data.name} ${index}`} />
+        <GatsbyImage
+          image={getImage(image)}
+          alt={`${data.name} ${index}`}
+          loading={"eager"}
+        />
       </Image>
     ))}
   </>

@@ -104,6 +104,7 @@ const ProjectExtendView: React.FC<IProjectExtendView> = ({
                   <GatsbyImage
                     image={getImage(image)}
                     alt={`${node.name} ${key}`}
+                    loading={"eager"}
                   />
                 </ImgMargin2x>
               ))
@@ -112,6 +113,7 @@ const ProjectExtendView: React.FC<IProjectExtendView> = ({
             <GatsbyImage
               image={getImage(node.images[node.images.length - 1])}
               alt={`${node.name} ${node.images.length - 1}`}
+              loading={"eager"}
             />
           </Img>
         </Container>
