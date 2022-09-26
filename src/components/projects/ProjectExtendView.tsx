@@ -3,7 +3,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 
 const Container = styled("div")`
-  padding: 0.75rem 3rem 1.75rem 3rem;
+  padding: 0.75rem 3rem 0.75rem 3rem;
   max-width: 40rem;
 
   @media (max-width: 600px) {
@@ -44,6 +44,10 @@ const HoverSpan = styled("span")`
   cursor: pointer;
 `;
 
+const MarginBottom = styled("div")`
+  margin-bottom: 1rem;
+`;
+
 interface IProjectExtendView {
   node: any;
   extended: boolean;
@@ -61,62 +65,64 @@ const ProjectExtendView: React.FC<IProjectExtendView> = ({
           <BoldMargin>{node.date}</BoldMargin>
           <Margin>{node.description}</Margin>
           <Margin>
-            Technologies:{" "}
-            {node.technologies.slice(0, -1).map((tech: any, key: number) => (
-              <span key={key}>{tech}, </span>
-            ))}
-            {node.technologies[node.technologies.length - 1]}
+            Technologies: <span>{node.technologies.sort().join(", ")}</span>
           </Margin>
-          <Margin>
-            Links:{" "}
-            {node.links.length > 1
-              ? node.links.slice(0, -1).map((link: any, key: number) => (
-                  <HoverSpan key={key}>
-                    <a
-                      href={"http://" + link.link}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {link.title}
-                    </a>
-                    ,{" "}
-                  </HoverSpan>
-                ))
-              : ""}
-            {
-              node.links
-                .slice(node.links.length - 1, node.links.length)
-                .map((link: { title: string; link: string }, key: number) => (
-                  <HoverSpan key={key}>
-                    <a
-                      href={"http://" + link.link}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {link.title}
-                    </a>
-                  </HoverSpan>
-                )) /* Work around for odd undefined error for container data type */
-            }
-          </Margin>
-          {node.images.length > 1
-            ? node.images.slice(0, -1).map((image: any, key: number) => (
-                <ImgMargin2x key={key}>
-                  <GatsbyImage
-                    image={getImage(image)}
-                    alt={`${node.name} ${key}`}
-                    loading={"eager"}
-                  />
-                </ImgMargin2x>
-              ))
-            : ""}
-          <Img>
-            <GatsbyImage
-              image={getImage(node.images[node.images.length - 1])}
-              alt={`${node.name} ${node.images.length - 1}`}
-              loading={"eager"}
-            />
-          </Img>
+          {node.links && node.links.length > 0 && (
+            <Margin>
+              Links:{" "}
+              {node.links.length > 1
+                ? node.links.slice(0, -1).map((link: any, key: number) => (
+                    <HoverSpan key={key}>
+                      <a
+                        href={"http://" + link.link}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {link.title}
+                      </a>
+                      ,{" "}
+                    </HoverSpan>
+                  ))
+                : ""}
+              {
+                node.links
+                  .slice(node.links.length - 1, node.links.length)
+                  .map((link: { title: string; link: string }, key: number) => (
+                    <HoverSpan key={key}>
+                      <a
+                        href={"http://" + link.link}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {link.title}
+                      </a>
+                    </HoverSpan>
+                  )) /* Work around for odd undefined error for container data type */
+              }
+            </Margin>
+          )}
+          {node.images && node.images.length > 0 && (
+            <MarginBottom>
+              {node.images.length > 1
+                ? node.images.slice(0, -1).map((image: any, key: number) => (
+                    <ImgMargin2x key={key}>
+                      <GatsbyImage
+                        image={getImage(image)}
+                        alt={`${node.name} ${key}`}
+                        loading={"eager"}
+                      />
+                    </ImgMargin2x>
+                  ))
+                : ""}
+              <Img>
+                <GatsbyImage
+                  image={getImage(node.images[node.images.length - 1])}
+                  alt={`${node.name} ${node.images.length - 1}`}
+                  loading={"eager"}
+                />
+              </Img>
+            </MarginBottom>
+          )}
         </Container>
       </td>
     </tr>
