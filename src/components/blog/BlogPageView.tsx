@@ -9,6 +9,7 @@ const Content = styled("div")`
   padding: 0 1.25rem;
   @media (max-width: 1000px) {
     padding: 0 2rem;
+    margin-top: 0rem;
   }
 `;
 
