@@ -24,7 +24,7 @@ const HoverLabel = styled("td")`
 `;
 
 const Date = styled("td")`
-  @media (max-width: 520px) : {
+  @media (max-width: 520px) {
     display: none;
   }
 `;
