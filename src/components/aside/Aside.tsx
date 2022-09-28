@@ -57,7 +57,7 @@ const Aside: React.FC<IAside> = ({ page }) => (
     <Description>
       <DescriptionWrap>
         <Title>
-          EECS Student at UC Berkeley who likes tech and design. I put stuff
+          EECS Student at UC Berkeley who explores tech and design. I put stuff
           here when I'm bored.
         </Title>
 
