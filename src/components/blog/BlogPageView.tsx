@@ -49,6 +49,7 @@ const IFrame = styled("iframe")`
   height: auto;
   width: 100%;
   aspect-ratio: 16 / 9;
+  background-color: black;
 `;
 
 interface IBlogPageView {
