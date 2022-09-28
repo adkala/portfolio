@@ -45,6 +45,12 @@ const Image = styled("div")`
   }
 `;
 
+const IFrame = styled("iframe")`
+  height: auto;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+`;
+
 interface IBlogPageView {
   data: any;
 }
@@ -59,6 +65,17 @@ const BlogPageView: React.FC<IBlogPageView> = ({ data }) => (
       <Date>{data.date}</Date>
       <Description>{data.description}</Description>
     </Content>
+    {data.video && (
+      <Image>
+        <IFrame
+          src={data.video}
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen="allowfullscreen"
+        ></IFrame>
+      </Image>
+    )}
     {data.images.map((image: ImageDataLike, index: number) => (
       <Image key={index}>
         <GatsbyImage
