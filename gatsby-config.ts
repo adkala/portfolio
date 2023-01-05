@@ -2,25 +2,21 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `portfolio-gatsby`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `portfolio`,
+    version: `0.0.2`,
+    siteUrl: `https://www.addikala.com`,
   },
   plugins: [
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    "gatsby-plugin-material-ui",
     {
       resolve: `gatsby-transformer-yaml`,
       options: {
         typeName: ({ node }) => {
           const name = node.sourceInstanceName;
-          if (name === `blog`) {
-            return `blog`;
-          } else if (name == `projects`) {
+          if (name == `projects`) {
             return `projects`;
           }
           return name;
@@ -32,13 +28,6 @@ const config: GatsbyConfig = {
       options: {
         isTSX: true,
         allExtensions: true,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/data/blog`,
-        name: `blog`,
       },
     },
     {
