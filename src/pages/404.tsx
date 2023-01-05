@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 
 const page404: React.FC = () => {
   useEffect(() => {
-    navigate("/blog");
+    navigate("/");
   }, []);
   return null;
 };

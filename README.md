@@ -1,5 +1,3 @@
-I wanted an aesthetic portfolio website, so I made one.
+Simple portfolio website to showcase projects.
 
-To run locally, run `npm run start`.
-
-Website live at www.addikala.com
+Live at www.addikala.com

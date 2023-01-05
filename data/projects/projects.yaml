@@ -1,5 +1,74 @@
-- name: "mode.limited"
-  description: "A social media site with an emphasis on discovering and sharing your personal style and fashion. Looking to redefine how men's fashion is consumed on the internet today. An ongoing effort. If interested, sign up below."
+- page: "vit-in-jax"
+  name: "ViT in JAX"
+  description:
+    - "Created a vision transformer (ViT) using JAX and Equinox based off the original ViT paper, 'An Image is Worth 16x16 Words: Transformers for Recognition at Scale' (arXiv:2010.11929). This was made as part of my group's final project in CS 182 (Deep Neural Networks) at UC Berkeley in the fall 2022 semester."
+    - "The goal of the project was to create a homework assignment that can be used in future renditions of the class. This notebook contains the coding component of our homework assignment, which explained the intricacies of vision transformers to students. I wrote most of the code and explanations for our group. Linked below is the solution notebook, which contains a completed LeNet-5 and ViT implementation using JAX and Equinox, a library that brings PyTorch-like neural nets to JAX."
+    - "The notebook linked is slightly modified from the original submission. It does not include the 'todo' questions contained in the original notebook."
+  technologies:
+    - "Python"
+    - "JAX"
+    - "Equinox"
+  links:
+    - title: "Notebook"
+      link: "colab.research.google.com/drive/14ji4AxewWWA-RptBUmf-4zHkd8-xNV-J?usp=sharing"
+
+- page: "personal-portfolio-1"
+  name: "Personal Portfolio 1"
+  description:
+    - "A portfolio website designed and created by myself, for myself. Purpose was to be able to showcase both art pieces and engineering projects in a simple and concise manner. Design inspired by minimalism and brutalism. Original mockups for design shown below. Created using Adobe Photoshop."
+  date: "September 2022"
+  technologies:
+    - "TypeScript"
+    - "React"
+    - "GatsbyJS"
+    - "GraphQL"
+  links:
+    - title: "GitHub"
+      link: "www.github.com/adkala/portfolio/tree/897bf4a1a88bd02ed3af7b5dd6f44e257ee0c5b9"
+  images:
+    - "../images/pp1-1.png"
+    - "../images/pp1-2.png"
+    - "../images/pp1-3.png"
+
+- page: "mobilesdk-debugger"
+  name: "MobileSDK Debugger"
+  description:
+    - "An internal debugging tool used by the MobileSDK team at Salesforce, Inc. Deployed on desktop and mobile (iOS and Android). Designed and developed during my internship with the company."
+  date: "May 2022 - August 2022"
+  technologies:
+    - "TypeScript"
+    - "LightningSDK"
+    - "GraphQL"
+    - "Swift"
+    - "Kotlin"
+
+- page: "proteomics-analysis"
+  name: "Proteomics Analysis"
+  description:
+    - "Tool that automates proteomic analysis. Provides fold changes and p-values as well as volcano plots to determine activated biological pathways in bacteria. Created for use by Deepika Awasthi's team at JBEI laboratories."
+  date: "August 2021 - September 2022"
+  technologies:
+    - "Python"
+    - "NumPy"
+  links:
+    - title: "GitHub"
+      link: "www.github.com/adkala/proteomic_analysis"
+
+- page: "mobile-atak"
+  name: "Mobile ATAK"
+  description:
+    - "An Android app plugin that served as a companion to military-deployed systems and software. Created during my internship at Valley Tech Systems, Inc. as an MVP to show potential customers what the company can offer in the mobile sector."
+  date: "June 2021 - September 2021"
+  technologies:
+    - "Java"
+    - "Dagger 2"
+    - "Jenkins"
+    - "RabbitMQ"
+
+- page: "mode-limited"
+  name: "mode.limited"
+  description:
+    - "A social media site with an emphasis on discovering and sharing your personal style and fashion. Looking to redefine how men's fashion is consumed on the internet today. An ongoing effort. If interested, sign up below."
   date: "May 2021 - Current"
   technologies:
     - "TypeScript"
@@ -14,57 +83,58 @@
     - "../images/mode1.jpeg"
     - "../images/mode2.jpeg"
     - "../images/mode3.jpeg"
-- name: "Personal Portfolio"
-  description: "A portfolio website designed and created by myself. Design inspired by minimalism and brutalism. Using it to easily showcase things I'm doing. Also, I think it looks sick."
-  date: "Sept 2022 - Sept 2022"
-  technologies:
-    - "TypeScript"
-    - "React"
-    - "GatsbyJS"
-    - "GraphQL"
-  links:
-    - title: "Website"
-      link: "www.addikala.com"
-    - title: "GitHub"
-      link: "www.github.com/adkala/portfolio"
-- name: "Proteomics Analysis"
-  description: "Tool that automates proteomic analysis. Provides fold changes and p-values as well as volcano plots to determine activated biological pathways in bacteria. Created for use by Deepika Awasthi's team at JBEI laboratories."
-  date: "Aug 2021 - Sept 2022"
-  technologies:
-    - "Python"
-    - "NumPy"
-- name: "MobileSDK Debugger"
-  description: "An internal debugging tool used by the MobileSDK team at Salesforce, Inc. Deployed on desktop and mobile (iOS and Android). Designed and developed during my internship with the company."
-  date: "May 2022 - Aug 2022"
-  technologies:
-    - "TypeScript"
-    - "LightningSDK"
-    - "GraphQL"
-    - "Swift"
-    - "Kotlin"
-- name: "Mobile ATAK"
-  description: "An Android app plugin that served as a companion to military-deployed systems and software. Created during my internship at Valley Tech Systems, Inc. as an MVP to show potential customers what the company can offer in the mobile sector."
-  date: "June 2021 - Sept 2021"
-  technologies:
-    - "Java"
-    - "Dagger 2"
-    - "Jenkins"
-    - "RabbitMQ"
-- name: "Gitlet"
-  description: "Java project emulating basic features of Git (add, commit, merge, etc.). Made while taking CS 61B (Data Structures) course at UC Berkeley."
-  date: "Mar 2021 - Mar 2021"
-  technologies:
-    - "Java"
-- name: "Tutoree"
-  description: "A website dedicated to connecting tutors and students within my local community. Features included adding people, searching for tutors and students, and messaging users. Inspired by my personal experience of having difficulty finding help as a student."
-  date: "Aug 2019 - Mar 2020"
-  technologies:
-    - "JavaScript"
-    - "React"
-    - "NodeJS"
-    - "Firebase"
-  links:
-    - title: "GitHub (Client)"
-      link: "www.github.com/adkala/tutoree-client"
-    - title: "GitHub (API)"
-      link: "www.github.com/adkala/tutoree-functions"
+
+- page: "undone"
+  name: "Undone"
+  date: "January 2021"
+  description:
+    - "This short film was created at UC Berkeley with the Cinematic Arts and Production Club. It is about post-apocalyptic survivors who try to grapple with their newfound reality, which may not be what they believe it to be. I was the assistant director and cinematographer for the film. Notably, it was shot at Fort Baker in Marin County, California."
+  images:
+    - "../images/undone1.png"
+    - "../images/undone2.png"
+    - "../images/undone3.png"
+  video: "https://www.youtube.com/embed/SATO45mA25I"
+
+- page: "portfolio-ui-1"
+  name: "Portfolio Mockups 1"
+  date: "November 2020"
+  description:
+    - "This portfolio design was created for a friend. He requested a duality between a traditional and modern feel, while keeping it sensible for a software engineering portfolio. Both desktop and mobile mockups were made using Adobe Photoshop and Adobe XD. This design is currently implemented in the his portfolio website."
+  images:
+    - "../images/pm1.png"
+    - "../images/pm2.png"
+    - "../images/pm3.png"
+    - "../images/pm4.png"
+
+- page: "all-of-the-above"
+  name: "All of the Above"
+  date: "October 2020"
+  description:
+    - "This short film was created at UC Berkeley with the Cinematic Arts and Production Club. It is about a college student going to extreme measures while taking his midterm in the COVID era. I was the producer for the film and created the poster using Adobe Photoshop."
+  images:
+    - "../images/aota1.jpeg"
+    - "../images/aota2.png"
+    - "../images/aota3.png"
+  video: "https://www.youtube.com/embed/rt1uci5yUKU"
+
+- page: "tsa-dvp"
+  name: "Flicks (for TSA Nationals: Digital Video Production)"
+  date: "June 2019"
+  description:
+    - "This short film was made for the 2019 Technology Student Association (TSA) national conference. The event was Digital Video Production, which required making a 3-minute video. This year, the prompt was mockumentary. Titled 'Flicks,' the story is of an athlete preparing for his most demanding battle yet. Working in a two-person team, I was the director, cinematographer, and editor for my group. This film was edited with Adobe After Effects and Adobe Premiere Pro."
+  images:
+    - "../images/dvp1.png"
+    - "../images/dvp2.png"
+    - "../images/dvp3.png"
+  video: "https://www.youtube.com/embed/5-Wd0_mBdXo"
+
+- page: "tsa-odv"
+  name: "TSA On-Demand Nationals (3rd Place)"
+  date: "June 2019"
+  description:
+    - "This video was made for the 2019 Technology Student Association (TSA) national conference, held in Washington D.C. The event was On-Demand Video, which consisted of making a one minute video on-site in under 48 hours. The prompt was open-ended. Competition consisted of over 150 qualifying teams from over 50 states and countries. This video won 3rd place. I was the director, cinematographer, and color-grader for my team. This film was color-graded with Sony Vegas 17."
+  images:
+    - "../images/odv1.png"
+    - "../images/odv2.png"
+    - "../images/odv3.png"
+  video: "https://www.youtube.com/embed/7OhOuJfVWIQ"
