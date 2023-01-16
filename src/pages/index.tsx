@@ -23,7 +23,8 @@ const Projects: React.FC<IProjects> = ({ data }) => {
       <Divider />
       <Text>
         EECS Student at UC Berkeley. Working at the intersection of technology
-        and design. Incoming software engineer at Lucid Software, Inc. Currently
+        and design. Software engineering intern at Lucid Software, Inc. Course
+        staff for CS 189 (Introduction to Machine Learning). Currently
         researching computer vision and its application in art and media. Always
         looking for new opportunities.
       </Text>
