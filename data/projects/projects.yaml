@@ -30,18 +30,6 @@
     - "../images/pp1-2.png"
     - "../images/pp1-3.png"
 
-- page: "mobilesdk-debugger"
-  name: "MobileSDK Debugger"
-  description:
-    - "An internal debugging tool used by the MobileSDK team at Salesforce, Inc. Deployed on desktop and mobile (iOS and Android). Designed and developed during my internship with the company."
-  date: "May 2022 - August 2022"
-  technologies:
-    - "TypeScript"
-    - "LightningSDK"
-    - "GraphQL"
-    - "Swift"
-    - "Kotlin"
-
 - page: "proteomics-analysis"
   name: "Proteomics Analysis"
   description:
@@ -53,17 +41,6 @@
   links:
     - title: "GitHub"
       link: "www.github.com/adkala/proteomic_analysis"
-
-- page: "mobile-atak"
-  name: "Mobile ATAK"
-  description:
-    - "An Android app plugin that served as a companion to military-deployed systems and software. Created during my internship at Valley Tech Systems, Inc. as an MVP to show potential customers what the company can offer in the mobile sector."
-  date: "June 2021 - September 2021"
-  technologies:
-    - "Java"
-    - "Dagger 2"
-    - "Jenkins"
-    - "RabbitMQ"
 
 - page: "mode-limited"
   name: "mode.limited"
@@ -83,58 +60,3 @@
     - "../images/mode1.jpeg"
     - "../images/mode2.jpeg"
     - "../images/mode3.jpeg"
-
-- page: "undone"
-  name: "Undone"
-  date: "January 2021"
-  description:
-    - "This short film was created at UC Berkeley with the Cinematic Arts and Production Club. It is about post-apocalyptic survivors who try to grapple with their newfound reality, which may not be what they believe it to be. I was the assistant director and cinematographer for the film. Notably, it was shot at Fort Baker in Marin County, California."
-  images:
-    - "../images/undone1.png"
-    - "../images/undone2.png"
-    - "../images/undone3.png"
-  video: "https://www.youtube.com/embed/SATO45mA25I"
-
-- page: "portfolio-ui-1"
-  name: "Portfolio Mockups 1"
-  date: "November 2020"
-  description:
-    - "This portfolio design was created for a friend. He requested a duality between a traditional and modern feel, while keeping it sensible for a software engineering portfolio. Both desktop and mobile mockups were made using Adobe Photoshop and Adobe XD. This design is currently implemented in the his portfolio website."
-  images:
-    - "../images/pm1.png"
-    - "../images/pm2.png"
-    - "../images/pm3.png"
-    - "../images/pm4.png"
-
-- page: "all-of-the-above"
-  name: "All of the Above"
-  date: "October 2020"
-  description:
-    - "This short film was created at UC Berkeley with the Cinematic Arts and Production Club. It is about a college student going to extreme measures while taking his midterm in the COVID era. I was the producer for the film and created the poster using Adobe Photoshop."
-  images:
-    - "../images/aota1.jpeg"
-    - "../images/aota2.png"
-    - "../images/aota3.png"
-  video: "https://www.youtube.com/embed/rt1uci5yUKU"
-
-- page: "tsa-dvp"
-  name: "Flicks (for TSA Nationals: Digital Video Production)"
-  date: "June 2019"
-  description:
-    - "This short film was made for the 2019 Technology Student Association (TSA) national conference. The event was Digital Video Production, which required making a 3-minute video. This year, the prompt was mockumentary. Titled 'Flicks,' the story is of an athlete preparing for his most demanding battle yet. Working in a two-person team, I was the director, cinematographer, and editor for my group. This film was edited with Adobe After Effects and Adobe Premiere Pro."
-  images:
-    - "../images/dvp1.png"
-    - "../images/dvp2.png"
-    - "../images/dvp3.png"
-  video: "https://www.youtube.com/embed/5-Wd0_mBdXo"
-
-- page: "tsa-odv"
-  name: "TSA On-Demand Nationals (3rd Place)"
-  date: "June 2019"
-  description:
-    - "This video was made for the 2019 Technology Student Association (TSA) national conference, held in Washington D.C. The event was On-Demand Video, which consisted of making a one minute video on-site in under 48 hours. The prompt was open-ended. Competition consisted of over 150 qualifying teams from over 50 states and countries. This video won 3rd place. I was the director, cinematographer, and color-grader for my team. This film was color-graded with Sony Vegas 17."
-  images:
-    - "../images/odv1.png"
-    - "../images/odv2.png"
-    - "../images/odv3.png"
-  video: "https://www.youtube.com/embed/7OhOuJfVWIQ"
