@@ -17,7 +17,7 @@ const Projects: React.FC<IProjects> = ({ data }) => {
   };
 
   return (
-    <>
+    <Parent>
       <Text>Addison Kalanther</Text>
       <Divider />
       <Text>
@@ -66,7 +66,7 @@ const Projects: React.FC<IProjects> = ({ data }) => {
           </Link>
         </Text>
       ))}
-    </>
+    </Parent>
   );
 };
 

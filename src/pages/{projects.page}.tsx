@@ -10,7 +10,6 @@ interface IPage {
 
 const Page: React.FC<IPage> = ({ data }) => (
   <Parent>
-    <FadeIn transitionDuration={500}>
       <Text>
         <Link to="/">
           <Click>Back</Click>
@@ -104,7 +103,6 @@ const Page: React.FC<IPage> = ({ data }) => (
             </Image>
           </>
         ))}
-    </FadeIn>
   </Parent>
 );
 
