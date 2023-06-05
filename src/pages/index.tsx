@@ -1,7 +1,6 @@
 import { Parent, Divider, Click, Text } from "../components/components";
 import { graphql, Link } from "gatsby";
 import React, { useState } from "react";
-import FadeIn from "react-fade-in";
 
 interface IProjects {
   data: any;
@@ -18,15 +17,12 @@ const Projects: React.FC<IProjects> = ({ data }) => {
   };
 
   return (
-    <FadeIn wrapperTag={Parent} transitionDuration={500}>
+    <>
       <Text>Addison Kalanther</Text>
       <Divider />
       <Text>
-        EECS Student at UC Berkeley. Working at the intersection of technology
-        and design. Software engineering intern at Lucid Software, Inc. Course
-        staff for CS 189 (Introduction to Machine Learning). Currently
-        researching computer vision and its application in autonomous driving. Always
-        looking for new opportunities.
+        EECS Student at UC Berkeley. Software engineering intern at Salesforce, Inc. Currently
+        researching computer vision and NLP.
       </Text>
       <Divider />
       <Text>
@@ -70,7 +66,7 @@ const Projects: React.FC<IProjects> = ({ data }) => {
           </Link>
         </Text>
       ))}
-    </FadeIn>
+    </>
   );
 };
 
