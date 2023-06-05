@@ -1,6 +1,4 @@
-import type { GatsbyConfig } from "gatsby";
-
-const config: GatsbyConfig = {
+module.exports = {
   siteMetadata: {
     title: `portfolio`,
     version: `0.0.2`,
@@ -46,5 +44,3 @@ const config: GatsbyConfig = {
     },
   ],
 };
-
-export default config;

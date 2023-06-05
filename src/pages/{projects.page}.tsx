@@ -68,27 +68,6 @@ const Page: React.FC<IPage> = ({ data }) => (
           </Text>
         </>
       )}
-      {data.projects.video && (
-        <>
-          <Divider />
-          <Divider />
-          <Image>
-            <iframe
-              src={data.projects.video}
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen="allowfullscreen"
-              style={{
-                width: "100%",
-                height: "auto",
-                aspectRatio: "16/9",
-                backgroundColor: "black",
-              }}
-            ></iframe>
-          </Image>
-        </>
-      )}
       {data.projects.images &&
         data.projects.images.map((image: ImageDataLike, index: number) => (
           <>
@@ -123,7 +102,6 @@ export const query = graphql`
           gatsbyImageData
         }
       }
-      video
     }
   }
 `;
