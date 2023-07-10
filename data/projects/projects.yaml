@@ -53,7 +53,7 @@
     - "Excel"
   links:
     - title: "GitHub"
-      link: "https://www.github.com/adkala/protemoic_analysis"
+      link: "https://github.com/adkala/proteomic_analysis"
   category: "tech"
 - name: "Mobile ATAK"
   description: "Android app plugin that served as a companion to military-deployed systems and software, created while at Valley Tech Systems, Inc."
@@ -70,9 +70,9 @@
     - "NextJS"
   links:
     - title: "Website"
-      link: "mode.limited"
+      link: "https://www.mode.limited"
     - title: "Mockups"
-      link: "https://drive.google.com/drive/folders/1t5EgTv4F0YnseLUiz1BYh-GT6AmVxCn0?usp=drive_link"
+      link: "https://www.drive.google.com/drive/folders/1t5EgTv4F0YnseLUiz1BYh-GT6AmVxCn0?usp=drive_link"
   category: "tech"
 - name: "Undone"
   description: "Short film about post-apocalyptic survivors who try to grapple with their newfound reality, served as cinematographer"
