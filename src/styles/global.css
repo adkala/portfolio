@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Inter&display=swap');
 
 body {
   font-size: 1rem;
   margin: 0;
-  font-family: 'Inconsolata', monospace;
-  font-weight: 300;
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: black;
 }
 
 code {
@@ -17,9 +17,10 @@ code {
 
 p {
   margin: 0;
-  margin-bottom: 0.35rem;
-  line-height: 1.35rem;
-  font-size: 0.875rem;
+  line-height: 2rem;
+  font-size: 1rem;
+  color: white;
+  opacity: .87;
 }
 
 a {

@@ -1,9 +1,25 @@
-- page: "vit-in-jax"
-  name: "ViT in JAX"
-  description:
-    - "Created a vision transformer (ViT) using JAX and Equinox based off the original ViT paper, 'An Image is Worth 16x16 Words: Transformers for Recognition at Scale' (arXiv:2010.11929). This was made as part of my group's final project in CS 182 (Deep Neural Networks) at UC Berkeley in the fall 2022 semester."
-    - "The goal of the project was to create a homework assignment that can be used in future renditions of the class. This notebook contains the coding component of our homework assignment, which explained the intricacies of vision transformers to students. I wrote most of the code and explanations for our group. Linked below is the solution notebook, which contains a completed LeNet-5 and ViT implementation using JAX and Equinox, a library that brings PyTorch-like neural nets to JAX."
-    - "The notebook linked is slightly modified from the original submission. It does not include the 'todo' questions contained in the original notebook."
+- name: "BeamNG Segmentation"
+  description: "Novel method for lane segmentation in BeamNG.tech from existing map, produces accurate base and annotated image pairs"
+  technologies:
+    - "Python"
+    - "NumPy"
+    - "BeamNGpy"
+  links:
+    - title: "GitHub"
+      link: "https://www.github.com/adkala/bngseg"
+  category: "tech"
+- name: "Safe Routing"
+  description: "Package / API created to solve the problem of efficient path finding with point avoidance, developed during LA Hacks 2023"
+  technologies:
+    - "Python"
+    - "Django"
+    - "REST API"
+  links:
+    - title: "GitHub"
+      link: "https://www.github.com/adkala/saferouting"
+  category: "tech"
+- name: "ViT in JAX"
+  description: "Created a vision transformer using JAX and Equinox based off the original ViT paper (arXiv:2010.11929)"
   technologies:
     - "Python"
     - "JAX"
@@ -11,52 +27,98 @@
   links:
     - title: "Notebook"
       link: "colab.research.google.com/drive/14ji4AxewWWA-RptBUmf-4zHkd8-xNV-J?usp=sharing"
-
-- page: "personal-portfolio-1"
-  name: "Personal Portfolio 1"
-  description:
-    - "A portfolio website designed and created by myself, for myself. Purpose was to be able to showcase both art pieces and engineering projects in a simple and concise manner. Design inspired by minimalism and brutalism. Original mockups for design shown below. Created using Adobe Photoshop."
-  date: "September 2022"
+  category: "tech"
+- name: "Portfolio Website"
+  description: "Portfolio designed and developed by me, used to showcase engineering and miscellaneous projects"
   technologies:
-    - "TypeScript"
+    - "Typescript"
     - "React"
     - "GatsbyJS"
-    - "GraphQL"
   links:
     - title: "GitHub"
-      link: "www.github.com/adkala/portfolio/tree/897bf4a1a88bd02ed3af7b5dd6f44e257ee0c5b9"
-  images:
-    - "../images/pp1-1.png"
-    - "../images/pp1-2.png"
-    - "../images/pp1-3.png"
-
-- page: "proteomics-analysis"
-  name: "Proteomics Analysis"
-  description:
-    - "Tool that automates proteomic analysis. Provides fold changes and p-values as well as volcano plots to determine activated biological pathways in bacteria. Created for use by Deepika Awasthi's team at JBEI laboratories."
-  date: "August 2021 - September 2022"
+      link: "https://www.github.com/adkala/portfolio/"
+  category: "tech"
+- name: "MobileSDK Debugger"
+  description: "Debugging tool used for mobile development at Salesforce, developed for and deployed on desktop and mobile (iOS and Android)"
+  technologies:
+    - "Typescript"
+    - "Swift"
+    - "Kotlin"
+  category: "tech"
+- name: "Proteomic Analysis"
+  description: "Tool that automates protemoic analysis, provides numerical figures and plots to determine activated biological pathways in bacteria"
   technologies:
     - "Python"
     - "NumPy"
+    - "Excel"
   links:
     - title: "GitHub"
-      link: "www.github.com/adkala/proteomic_analysis"
-
-- page: "mode-limited"
-  name: "mode.limited"
-  description:
-    - "A social media site with an emphasis on discovering and sharing your personal style and fashion. Looking to redefine how men's fashion is consumed on the internet today. An ongoing effort. If interested, sign up below."
-  date: "May 2021 - Current"
+      link: "https://www.github.com/adkala/protemoic_analysis"
+  category: "tech"
+- name: "Mobile ATAK"
+  description: "Android app plugin that served as a companion to military-deployed systems and software, created while at Valley Tech Systems, Inc."
   technologies:
-    - "TypeScript"
+    - "Java"
+    - "Dagger 2"
+    - "RabbitMQ"
+  category: "tech"
+- name: "Mode"
+  description: "Social media site with an emphasis on discovering and sharing your personal style and fashion, targeted towards men and the luxury sector"
+  technologies:
+    - "Typescript"
     - "React"
-    - "NodeJS"
     - "NextJS"
-    - "AWS"
   links:
     - title: "Website"
       link: "mode.limited"
-  images:
-    - "../images/mode1.jpeg"
-    - "../images/mode2.jpeg"
-    - "../images/mode3.jpeg"
+    - title: "Mockups"
+      link: "https://drive.google.com/drive/folders/1t5EgTv4F0YnseLUiz1BYh-GT6AmVxCn0?usp=drive_link"
+  category: "tech"
+- name: "Undone"
+  description: "Short film about post-apocalyptic survivors who try to grapple with their newfound reality, served as cinematographer"
+  technologies:
+    - "Film"
+    - "Cinematography"
+  links:
+    - title: "Video"
+      link: "https://www.youtube.com/embed/SATO45mA25I"
+  category: "misc"
+- name: "Portfolio UI 1"
+  description: "Software engineering portfolio designed to embody a duality between a traditional and modern feel, while keeping it pragmatic"
+  technologies:
+    - "UI/UX"
+    - "Photoshop"
+    - "Adobe XD"
+  links:
+    - title: "Mockups"
+      link: "https://drive.google.com/drive/folders/1i3dQa4SO2KmwIe_7AAPuB_-1JJBksh0k?usp=sharing"
+  category: "misc"
+- name: "All of the Above"
+  description: "Short film about a student going to extreme measures while taking his midterm during COVID, served as producer and created poster"
+  technologies:
+    - "Photoshop"
+    - "Illustrator"
+  links:
+    - title: "video"
+      link: "https://www.youtube.com/embed/rt1uci5yUKU"
+    - title: "poster"
+      link: "https://drive.google.com/file/d/1qfiAtmmFpnu295i3vnMDvu4FaswqQ9zR/view?usp=sharing"
+  category: "misc"
+- name: "Flicks"
+  description: "Short mockumentary about a 'flicks' athlete preparing for his most demanding battle yet, served as director, cinematographer, and editor"
+  technologies:
+    - "Premeire Pro"
+    - "After Effects"
+  links:
+    - title: "video"
+      link: "https://www.youtube.com/embed/5-Wd0_mBdXo"
+  category: "misc"
+- name: "Untitled"
+  description: "Video about a son mourning and looking up to his father who served his country, won 3rd place at TSA Nationals 2019, served as director"
+  technologies:
+    - "Premiere Pro"
+    - "After Effects"
+  links:
+    - title: "video"
+      link: "https://www.youtube.com/embed/7OhOuJfVWIQ"
+  category: "misc"
